@@ -1,0 +1,12 @@
+# IDE / OS
+.DS_Store
+.idea/
+.vscode/
+*.bak
+*.bak.*
+
+# Editors
+.sublime-*
+
+# Node caches（如未来引入构建工具）
+node_modules/

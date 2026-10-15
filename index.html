@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="" style="--name-bg: url(assets/name-bg.jpg);" data-theme="light"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUMIÈRE · 光影集 · 个人摄影作品集</title>
+<meta name="description" content="个人摄影作品集 · Cos · 日常 · 婚礼 · 风景">
+
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <div id="scrollSentinel" aria-hidden="true"></div>
+
+<!-- ============================================
+     NAVIGATION
+     ============================================ -->
+<nav class="nav scrolled" id="nav"></nav>
+
+<!-- ============================================
+     HERO - Apple-Style Personal Introduction
+     ============================================ -->
+<section class="hero">
+  <div class="hero-ambient"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="pulse"></span>
+      <span>Personal Photography Portfolio</span>
+    </div>
+    <h1 class="hero-name">风月</h1>
+    <div class="hero-name-en">FENG YUE · LUMIÈRE</div>
+    <p class="hero-tagline">
+      用镜头书写<span class="highlight">光影的诗</span>，<br>
+      在快门之间收藏世界的温度。
+    </p>
+    <p class="hero-subdesc">
+      独立摄影师 · 专注人像与纪实摄影 · 用影像记录从二次元到现实世界的每一个动人瞬间
+    </p>
+    <div class="hero-actions">
+      <a href="#gallery" class="btn-apple primary" onclick="scrollToGallery(event)">
+        浏览作品
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+      <a href="#about" class="btn-apple secondary" onclick="scrollToAbout(event)">
+        关于我
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================================
+     ABOUT SECTION
+     ============================================ -->
+<section class="about-section reveal visible" id="about">
+  <div class="about-grid">
+    <div class="about-portrait">
+      <div class="portrait-viewer" id="portraitViewer">
+        <div class="portrait-stage" id="portraitStage" tabindex="0" style="outline: none;">
+          <div class="portrait-slides" id="portraitSlides" style="transform: translateX(0%);"><div class="portrait-slide"><img src="assets/portrait-fengyue.jpg" alt="风月" loading="lazy" draggable="false"></div><div class="portrait-slide"><img src="assets/portrait-placeholder-2.svg" alt="占位图 2" loading="lazy" draggable="false"></div><div class="portrait-slide"><img src="assets/portrait-placeholder-3.svg" alt="占位图 3" loading="lazy" draggable="false"></div><div class="portrait-slide"><img src="assets/portrait-placeholder-4.svg" alt="占位图 4" loading="lazy" draggable="false"></div></div>
+          <button class="portrait-arrow portrait-prev" id="portraitPrev" aria-label="上一张">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </button>
+          <button class="portrait-arrow portrait-next" id="portraitNext" aria-label="下一张">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </button>
+          <div class="portrait-counter" id="portraitCounter">1 / 4</div>
+        </div>
+        <div class="portrait-thumbs" id="portraitThumbs"><button class="portrait-thumb active" data-index="0" aria-label="风月">
+      <img src="assets/portrait-fengyue.jpg" alt="" loading="lazy" draggable="false">
+    </button><button class="portrait-thumb" data-index="1" aria-label="占位图 2">
+      <img src="assets/portrait-placeholder-2.svg" alt="" loading="lazy" draggable="false">
+    </button><button class="portrait-thumb" data-index="2" aria-label="占位图 3">
+      <img src="assets/portrait-placeholder-3.svg" alt="" loading="lazy" draggable="false">
+    </button><button class="portrait-thumb" data-index="3" aria-label="占位图 4">
+      <img src="assets/portrait-placeholder-4.svg" alt="" loading="lazy" draggable="false">
+    </button></div>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="section-label">关于我 · About</div>
+      <h2>一个用<span class="gradient">光影</span>讲故事的人</h2>
+      <p class="bio">
+        <strong>风月</strong>，独立摄影师，常驻成都。大学期间拿起相机，从此便沉迷于快门开合间凝固的那个瞬间。我相信每一张照片都是一封写给时间的情书,它可以把你拉回到记忆中的那个时间，感受到那时的情绪和流转</p>
+      <p class="bio">
+        从漫展上角色扮演者的华丽变身，到婚礼上新人到幸福时刻，到雪山之巅被朝阳点燃的云海，和刺破天穹的霞光,<strong>我试图用镜头记录世界的每一面</strong>。不设限，不定义，只追随那些让我心动的光影。
+      </p>
+      <div class="about-tags">
+        <span class="about-tag"><span class="dot" style="background:var(--cos)"></span>Cosplay 摄影</span>
+        <span class="about-tag"><span class="dot" style="background:var(--daily)"></span>人文纪实</span>
+        <span class="about-tag"><span class="dot" style="background:var(--wedding)"></span>婚礼跟拍</span>
+        <span class="about-tag"><span class="dot" style="background:var(--landscape)"></span>风光摄影</span>
+        <span class="about-tag"><span class="dot" style="background:var(--accent)"></span>商业约拍</span>
+        <span class="about-tag"><span class="dot" style="background:var(--accent-blue)"></span>后期修图</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Links -->
+  <div class="about-social">
+    <a href="https://www.xiaohongshu.com/user/profile/614d52030000000002027c32" target="_blank" rel="noopener" id="socialXhs">
+      <span class="icon"><svg viewBox="0 0 24 24" fill="none"><rect x="1.5" y="6" width="21" height="12" rx="6" fill="#FF2442"></rect><text x="12" y="15.5" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif" font-size="7.5" font-weight="700" fill="white" text-anchor="middle">小红书</text></svg></span>
+      <span>小红书</span>
+      <span class="label" id="socialXhsLabel">@珮希希Zpexii</span>
+    </a>
+    <a href="javascript:void(0)" id="socialWechat">
+      <span class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M16.5 6.5c-3.04 0-5.5 2.1-5.5 4.7 0 1.2.57 2.3 1.5 3.1l-.5 1.5 1.7-.9c.75.23 1.55.35 2.38.35 3.04 0 5.5-2.1 5.5-4.7S19.54 6.5 16.5 6.5z" fill="#07C160" opacity="0.7"></path><path d="M8.5 2C4.36 2 1 4.8 1 8.25c0 1.92 1.05 3.64 2.7 4.8L3 15l2.7-1.35c.9.26 1.85.4 2.8.4.54 0 1.07-.05 1.58-.15-.05-.23-.08-.46-.08-.7 0-2.5 2.47-4.53 5.5-4.53.28 0 .55.02.82.05C15.42 4.86 12.23 2 8.5 2z" fill="#07C160"></path></svg></span>
+      <span>微信</span>
+      <span class="label" id="socialWechatLabel">@风月</span>
+    </a>
+    <a href="https://fengyue.tuchong.com" target="_blank" rel="noopener" id="socialTuchong">
+      <span class="icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#FF6A00"></circle><text x="12" y="16" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="13" font-weight="700" fill="white" text-anchor="middle">图</text></svg></span>
+      <span>图虫</span>
+      <span class="label" id="socialTuchongLabel">@风月</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============================================
+     EQUIPMENT - Apple Store 风格器材展示
+     ============================================ -->
+<section class="equipment-section reveal visible" id="equipment">
+  <div class="equipment-header">
+    <div class="equipment-eyebrow">Equipment</div>
+    <h2 class="equipment-title">当前器材</h2>
+  </div>
+  <div class="equipment-scroll">
+    <div class="eq-product">
+      <div class="eq-product-img">
+        <img src="assets/eq-a7iv.jpg" loading="lazy" alt="Sony A7 IV">
+      </div>
+      <div class="eq-product-body">
+        <div class="eq-product-name">Pocket4pro</div>
+        <div class="eq-product-spec">手持电影机</div>
+      </div>
+    </div>
+    <div class="eq-product">
+      <div class="eq-product-img">
+        <img src="assets/eq-2470gm2.jpg" loading="lazy" alt="24-70mm GM II">
+      </div>
+      <div class="eq-product-body">
+        <div class="eq-product-name">24-70mm f/2.8 GM II</div>
+        <div class="eq-product-spec">标准变焦 · G Master</div>
+      </div>
+    </div>
+    <div class="eq-product">
+      <div class="eq-product-img">
+        <img src="assets/eq-85mm.jpg" alt="85mm GM">
+      </div>
+      <div class="eq-product-body">
+        <div class="eq-product-name">85mm f/1.4 GM</div>
+        <div class="eq-product-spec">人像定焦 · G Master</div>
+      </div>
+    </div>
+    <div class="eq-product">
+      <div class="eq-product-img">
+        <img src="assets/eq-70200.jpg" alt="70-200mm GM II">
+      </div>
+      <div class="eq-product-body">
+        <div class="eq-product-name">70-200mm f/2.8 GM II</div>
+        <div class="eq-product-spec">长焦变焦 · G Master</div>
+      </div>
+    </div>
+    <div class="eq-product">
+      <div class="eq-product-img">
+        <img src="assets/eq-1635.jpg" alt="16-35mm GM">
+      </div>
+      <div class="eq-product-body">
+        <div class="eq-product-name">16-35mm f/2.8 GM</div>
+        <div class="eq-product-spec">超广角 · G Master</div>
+      </div>
+    </div>
+    <div class="eq-product">
+      <div class="eq-product-img">
+        <img src="assets/eq-godox.jpg" alt="Godox AD200">
+      </div>
+      <div class="eq-product-body">
+        <div class="eq-product-name">Godox AD200 Pro</div>
+        <div class="eq-product-spec">便携闪光灯 · 200Ws</div>
+      </div>
+    </div>
+    <div class="eq-product">
+      <div class="eq-product-img">
+        <img src="assets/eq-nanlite.jpg" alt="Nanlite Forza 60C">
+      </div>
+      <div class="eq-product-body">
+        <div class="eq-product-name">Nanlite Forza 60C</div>
+        <div class="eq-product-spec">全彩LED · 60W</div>
+      </div>
+    </div>
+    <div class="eq-product">
+      <div class="eq-product-img">
+        <img src="assets/eq-rs4.jpg" alt="DJI RS 4">
+      </div>
+      <div class="eq-product-body">
+        <div class="eq-product-name">DJI RS 4</div>
+        <div class="eq-product-spec">三轴稳定器 · 3kg负载</div>
+      </div>
+    </div>
+    <div class="eq-product">
+      <div class="eq-product-img">
+        <img src="assets/eq-mavic.jpg" alt="DJI Mavic 3 Pro">
+      </div>
+      <div class="eq-product-body">
+        <div class="eq-product-name">DJI Mavic 3 Pro</div>
+        <div class="eq-product-spec">哈苏三摄 · 4/3 CMOS</div>
+      </div>
+    </div>
+    <div class="eq-product">
+      <div class="eq-product-img">
+        <img src="assets/eq-macbook.jpg" alt="MacBook Pro">
+      </div>
+      <div class="eq-product-body">
+        <div class="eq-product-name">MacBook Pro 16"</div>
+        <div class="eq-product-spec">M3 Max · 48GB</div>
+      </div>
+    </div>
+    <div class="eq-product">
+      <div class="eq-product-img">
+        <img src="assets/eq-t7.jpg" alt="Samsung T7">
+      </div>
+      <div class="eq-product-body">
+        <div class="eq-product-name">Samsung T7</div>
+        <div class="eq-product-spec">2TB · 移动固态硬盘</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     GALLERY
+     ============================================ -->
+<section class="gallery-section reveal visible" id="gallery">
+  <!-- 吸顶哨兵：高度 0，紧跟其后的包裹层一旦贴到导航下方即判定「已吸住」 -->
+  <div class="gallery-sentinel" id="gallerySentinel" aria-hidden="true"></div>
+  <div class="gallery-sticky" id="gallerySticky">
+  <div class="gallery-header">
+    <div class="left">
+      <div class="eyebrow">Gallery · 作品画廊</div>
+      <h2>光影叙事</h2>
+    </div>
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-cat="all"><span class="dot"></span>全部 <span class="count" id="countAll">15</span></button>
+      <button class="filter-btn" data-cat="cos"><span class="dot"></span>Cos <span class="count" id="countCos">3</span></button>
+      <button class="filter-btn" data-cat="daily"><span class="dot"></span>日常 <span class="count" id="countDaily">3</span></button>
+      <button class="filter-btn" data-cat="wedding"><span class="dot"></span>婚礼 <span class="count" id="countWedding">3</span></button>
+      <button class="filter-btn" data-cat="landscape"><span class="dot"></span>风景 <span class="count" id="countLandscape">3</span></button>
+      <button class="filter-btn" data-cat="aigc"><span class="dot"></span>AIGC <span class="count" id="countAigc">3</span></button>
+    </div>
+  </div>
+  </div>
+  <div class="masonry" id="masonry">
+      <div class="photo-card visible" data-index="0" data-cat="cos" data-collection="cos-01">
+        <img src="https://picsum.photos/seed/cos01/800/1200" alt="暗夜幻影" loading="lazy">
+        <div class="photo-overlay">
+          <div class="cat-badge"><span class="dot" style="background:#ff375f"></span>Cos</div>
+          <div class="title">暗夜幻影</div>
+          <div class="meta">4 张照片</div>
+        </div>
+      </div>
+      <div class="photo-card visible" data-index="1" data-cat="cos" data-collection="cos-02">
+        <img src="https://picsum.photos/seed/cos02/800/1100" alt="和风物语" loading="lazy">
+        <div class="photo-overlay">
+          <div class="cat-badge"><span class="dot" style="background:#ff375f"></span>Cos</div>
+          <div class="title">和风物语</div>
+          <div class="meta">4 张照片</div>
+        </div>
+      </div>
+      <div class="photo-card visible" data-index="2" data-cat="cos" data-collection="cos-03">
+        <img src="https://picsum.photos/seed/cos03/800/1000" alt="未来狂想" loading="lazy">
+        <div class="photo-overlay">
+          <div class="cat-badge"><span class="dot" style="background:#ff375f"></span>Cos</div>
+          <div class="title">未来狂想</div>
+          <div class="meta">4 张照片</div>
+        </div>
+      </div>
+      <div class="photo-card visible" data-index="3" data-cat="daily" data-collection="daily-01">
+        <img src="https://picsum.photos/seed/daily03/800/900" alt="城市漫游" loading="lazy">
+        <div class="photo-overlay">
+          <div class="cat-badge"><span class="dot" style="background:#ff9f0a"></span>日常</div>
+          <div class="title">城市漫游</div>
+          <div class="meta">4 张照片</div>
+        </div>
+      </div>
+      <div class="photo-card visible" data-index="4" data-cat="daily" data-collection="daily-02">
+        <img src="https://picsum.photos/seed/daily01/800/600" alt="生活仪式" loading="lazy">
+        <div class="photo-overlay">
+          <div class="cat-badge"><span class="dot" style="background:#ff9f0a"></span>日常</div>
+          <div class="title">生活仪式</div>
+          <div class="meta">4 张照片</div>
+        </div>
+      </div>
+      <div class="photo-card visible" data-index="5" data-cat="daily" data-collection="daily-03">
+        <img src="https://picsum.photos/seed/daily05/800/800" alt="人间烟火" loading="lazy">
+        <div class="photo-overlay">
+          <div class="cat-badge"><span class="dot" style="background:#ff9f0a"></span>日常</div>
+          <div class="title">人间烟火</div>
+          <div class="meta">4 张照片</div>
+        </div>
+      </div>
+      <div class="photo-card visible" data-index="6" data-cat="wedding" data-collection="wed-01">
+        <img src="https://picsum.photos/seed/wed02/800/1200" alt="仪式之晨" loading="lazy">
+        <div class="photo-overlay">
+          <div class="cat-badge"><span class="dot" style="background:#ffb6c1"></span>婚礼</div>
+          <div class="title">仪式之晨</div>
+          <div class="meta">4 张照片</div>
+        </div>
+      </div>
+      <div class="photo-card visible" data-index="7" data-cat="wedding" data-collection="wed-02">
+        <img src="https://picsum.photos/seed/wed01/800/1100" alt="浪漫瞬间" loading="lazy">
+        <div class="photo-overlay">
+          <div class="cat-badge"><span class="dot" style="background:#ffb6c1"></span>婚礼</div>
+          <div class="title">浪漫瞬间</div>
+          <div class="meta">4 张照片</div>
+        </div>
+      </div></div>
+  <div class="load-more" id="loadMoreWrap" style="display: block;">
+    <button class="btn-load" id="btnLoadMore">加载更多 · Load More</button>
+  </div>
+
+  <!-- 未完待续 · 画廊尾部占位卡 -->
+  <div class="to-be-continued reveal visible">
+    <div class="tbc-eyebrow">To Be Continued</div>
+    <div class="tbc-title">未完待续 · 新作正在路上</div>
+    <p class="tbc-sub">按下快门的瞬间，永远在为下一束光预留位置。</p>
+    <div class="tbc-progress"><div class="tbc-progress-fill"></div></div>
+  </div>
+</section>
+
+<!-- ============================================
+     光的信物 · MANIFESTO
+     ============================================ -->
+<section class="manifesto section reveal visible">
+  <div class="manifesto-bg" style="background-image:url('assets/name-bg.jpg')"></div>
+  <span class="manifesto-mark">"</span>
+  <p class="manifesto-quote">
+    我不是在拍摄你想看到的，<br>
+    我，在收藏<em>光</em>——<span class="grad">每一次凝视</span>。
+  </p>
+  <p class="manifesto-sub">
+    快门声响起以前，我已经等了很久。<br>
+    等风停，等光线落稳，等那个恰好的瞬间自己走过来。<br>
+    我把它们留下来，留给所有<em class="grad">值得被记住</em>的日子。
+  </p>
+  <div class="manifesto-keywords">
+    <span class="k">Cosplay</span>
+    <span class="k">Daily</span>
+    <span class="k">Wedding</span>
+    <span class="k">Scenery</span>
+    <span class="k">AIGC</span>
+  </div>
+  <div class="manifesto-en">Lumière · Faites Silence</div>
+</section>
+
+<!-- ============================================
+     灵感碎片 · SNIPPETS
+     ============================================ -->
+<section class="snippets section reveal visible">
+  <div class="snippets-inner">
+    <div class="snippets-head">
+      <div class="section-label">灵感碎片 · Fragments</div>
+    </div>
+    <div class="snippets-grid">
+      <figure class="polaroid">
+        <div class="polaroid-img"><img src="https://picsum.photos/seed/frag01/600/450" alt="灵感碎片" loading="lazy"></div>
+        <figcaption class="polaroid-note">第一缕晨光落在旧相机上
+          <span class="p-marker">FRAG · 001</span>
+        </figcaption>
+      </figure>
+      <figure class="polaroid">
+        <div class="polaroid-img"><img src="https://picsum.photos/seed/frag02/600/450" alt="灵感碎片" loading="lazy"></div>
+        <figcaption class="polaroid-note">把暂不能按下快门的心情，也收进胶卷
+          <span class="p-marker">FRAG · 002</span>
+        </figcaption>
+      </figure>
+      <figure class="polaroid">
+        <div class="polaroid-img"><img src="https://picsum.photos/seed/frag03/600/450" alt="灵感碎片" loading="lazy"></div>
+        <figcaption class="polaroid-note">他望着那扇窗，很久很久
+          <span class="p-marker">FRAG · 003</span>
+        </figcaption>
+      </figure>
+      <figure class="polaroid">
+        <div class="polaroid-img"><img src="https://picsum.photos/seed/frag04/600/450" alt="灵感碎片" loading="lazy"></div>
+        <figcaption class="polaroid-note">街角的花，替整条巷子开了个故事
+          <span class="p-marker">FRAG · 004</span>
+        </figcaption>
+      </figure>
+      <figure class="polaroid">
+        <div class="polaroid-img"><img src="https://picsum.photos/seed/frag05/600/450" alt="灵感碎片" loading="lazy"></div>
+        <figcaption class="polaroid-note">逆光里，他回头笑了三次
+          <span class="p-marker">FRAG · 005</span>
+        </figcaption>
+      </figure>
+      <figure class="polaroid">
+        <div class="polaroid-img"><img src="https://picsum.photos/seed/frag06/600/450" alt="灵感碎片" loading="lazy"></div>
+        <figcaption class="polaroid-note">这一帧，温度刚刚好
+          <span class="p-marker">FRAG · 006</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="footer reveal visible"></footer>
+
+<!-- ============================================
+     COLLECTION OVERLAY - 作品集详情
+     ============================================ -->
+<div class="collection-overlay" id="collectionOverlay">
+  <div class="collection-panel" id="cdContent">
+    <div class="cd-header">
+      <div class="cd-header-left">
+        <div class="cd-cat" style="color:#ff375f">
+          <span class="dot" style="background:#ff375f"></span>Cos · Cosplay
+        </div>
+        <h2 class="cd-title">暗夜幻影</h2>
+        <p class="cd-desc">暗黑系角色还原，用光影塑造戏剧张力。从森林到废墟，每一帧都充满故事感。</p>
+      </div>
+      <button class="cd-close" onclick="closeCollection()" aria-label="关闭">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="cd-grid">
+      
+      <div class="cd-item" style="--cd-delay:0s">
+        <div class="cd-img-wrap">
+          <img src="https://picsum.photos/seed/cos01/800/1200" alt="幻夜骑士" loading="lazy">
+        </div>
+        <div class="cd-caption">
+          <span class="cd-title">幻夜骑士</span>
+          <span class="cd-loc">上海·漫展</span>
+        </div>
+      </div>
+      <div class="cd-item" style="--cd-delay:0.05s">
+        <div class="cd-img-wrap">
+          <img src="https://picsum.photos/seed/cos06/800/1150" alt="暗夜精灵" loading="lazy">
+        </div>
+        <div class="cd-caption">
+          <span class="cd-title">暗夜精灵</span>
+          <span class="cd-loc">苏州·园林</span>
+        </div>
+      </div>
+      <div class="cd-item" style="--cd-delay:0.1s">
+        <div class="cd-img-wrap">
+          <img src="https://picsum.photos/seed/cos10/800/1100" alt="妖狐幻影" loading="lazy">
+        </div>
+        <div class="cd-caption">
+          <span class="cd-title">妖狐幻影</span>
+          <span class="cd-loc">成都·实景基地</span>
+        </div>
+      </div>
+      <div class="cd-item" style="--cd-delay:0.15000000000000002s">
+        <div class="cd-img-wrap">
+          <img src="https://picsum.photos/seed/cos12/800/1000" alt="战士黎明" loading="lazy">
+        </div>
+        <div class="cd-caption">
+          <span class="cd-title">战士黎明</span>
+          <span class="cd-loc">横店·影视城</span>
+        </div>
+      </div>
+    </div></div>
+</div>
+
+<!-- ============================================
+     MUSIC PLAYER
+     ============================================ -->
+<div class="player" id="player">
+  <button class="player-toggle" id="playerToggle" aria-label="展开/收起播放器">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  </button>
+
+  <div class="player-track">
+    <div class="player-cover" id="playerCover"><div class="cover-placeholder">♪</div></div>
+    <div class="player-track-info">
+      <div class="name" id="trackName">Midnight Reverie</div>
+      <div class="artist" id="trackArtist">SoundHelix</div>
+    </div>
+  </div>
+
+  <div class="player-controls">
+    <button class="player-btn" id="btnShuffle" aria-label="随机播放" title="随机播放">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
+    </button>
+    <button class="player-btn" id="btnPrev" aria-label="上一曲">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path></svg>
+    </button>
+    <button class="player-btn play" id="btnPlay" aria-label="播放/暂停">
+      <svg id="iconPlay" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+      <svg id="iconPause" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path></svg>
+    </button>
+    <button class="player-btn" id="btnNext" aria-label="下一曲">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path></svg>
+    </button>
+    <button class="player-btn" id="btnRepeat" aria-label="循环模式" title="循环模式">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+    </button>
+  </div>
+
+  <div class="player-progress-wrap">
+    <span class="player-time" id="timeCurrent">0:00</span>
+    <div class="player-progress" id="progressBar">
+      <div class="player-progress-fill" id="progressFill"></div>
+    </div>
+    <span class="player-time" id="timeDuration">6:12</span>
+  </div>
+
+  <div class="player-viz" id="playerViz">
+    <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+  </div>
+
+  <div class="player-volume">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" stroke-width="1.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+    <div class="player-volume-slider" id="volumeSlider">
+      <div class="player-volume-fill" id="volumeFill" style="width: 70%;"></div>
+    </div>
+  </div>
+
+  <button class="player-playlist-btn" id="btnPlaylist" aria-label="播放列表">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+  </button>
+
+  <audio id="audio" preload="metadata" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+</div>
+
+<!-- Playlist Panel -->
+<div class="playlist-panel" id="playlistPanel">
+  <div class="playlist-header">
+    <span class="title">播放列表 · Playlist</span>
+    <span class="count" id="playlistCount">8 tracks</span>
+  </div>
+  <div class="playlist-list" id="playlistList">
+    <div class="playlist-item active" data-idx="0">
+      <span class="num">01</span>
+      <div class="info">
+        <div class="name">Midnight Reverie</div>
+        <div class="artist">SoundHelix</div>
+      </div>
+      <span class="duration">--:--</span>
+    </div>
+    <div class="playlist-item " data-idx="1">
+      <span class="num">02</span>
+      <div class="info">
+        <div class="name">Golden Hour</div>
+        <div class="artist">SoundHelix</div>
+      </div>
+      <span class="duration">--:--</span>
+    </div>
+    <div class="playlist-item " data-idx="2">
+      <span class="num">03</span>
+      <div class="info">
+        <div class="name">Silent Bloom</div>
+        <div class="artist">SoundHelix</div>
+      </div>
+      <span class="duration">--:--</span>
+    </div>
+    <div class="playlist-item " data-idx="3">
+      <span class="num">04</span>
+      <div class="info">
+        <div class="name">Urban Echoes</div>
+        <div class="artist">SoundHelix</div>
+      </div>
+      <span class="duration">--:--</span>
+    </div>
+    <div class="playlist-item " data-idx="4">
+      <span class="num">05</span>
+      <div class="info">
+        <div class="name">Dreamwalker</div>
+        <div class="artist">SoundHelix</div>
+      </div>
+      <span class="duration">--:--</span>
+    </div>
+    <div class="playlist-item " data-idx="5">
+      <span class="num">06</span>
+      <div class="info">
+        <div class="name">Crimson Dusk</div>
+        <div class="artist">SoundHelix</div>
+      </div>
+      <span class="duration">--:--</span>
+    </div>
+    <div class="playlist-item " data-idx="6">
+      <span class="num">07</span>
+      <div class="info">
+        <div class="name">Velvet Storm</div>
+        <div class="artist">SoundHelix</div>
+      </div>
+      <span class="duration">--:--</span>
+    </div>
+    <div class="playlist-item " data-idx="7">
+      <span class="num">08</span>
+      <div class="info">
+        <div class="name">Lunar Tide</div>
+        <div class="artist">SoundHelix</div>
+      </div>
+      <span class="duration">--:--</span>
+    </div></div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">点击播放按钮开启音乐 ♪</div>
+
+<script src="assets/js/columns.js"></script>
+<script src="assets/js/config.js" data-root=""></script>
+<script src="assets/js/shell.js"></script>
+<script>
+// ============================================
+// PHOTO DATA
+// ============================================
+const categories = {
+  cos: { name: 'Cos', label: 'Cosplay', color: '#ff375f', en: 'Cosplay' },
+  daily: { name: '日常', label: 'Daily Life', color: '#ff9f0a', en: 'Daily Life' },
+  wedding: { name: '婚礼', label: 'Wedding', color: '#ffb6c1', en: 'Wedding' },
+  landscape: { name: '风景', label: 'Landscape', color: '#30d158', en: 'Landscape' },
+  aigc: { name: 'AIGC', label: 'AI Generative', color: '#64d2ff', en: 'AI Generative' }
+};
+
+const collections = [
+  // === COS ===
+  {
+    id: 'cos-01', cat: 'cos', title: '暗夜幻影', desc: '暗黑系角色还原，用光影塑造戏剧张力。从森林到废墟，每一帧都充满故事感。',
+    items: [
+      { title: '幻夜骑士', seed: 'cos01', w: 800, h: 1200, loc: '上海·漫展' },
+      { title: '暗夜精灵', seed: 'cos06', w: 800, h: 1150, loc: '苏州·园林' },
+      { title: '妖狐幻影', seed: 'cos10', w: 800, h: 1100, loc: '成都·实景基地' },
+      { title: '战士黎明', seed: 'cos12', w: 800, h: 1000, loc: '横店·影视城' }
+    ]
+  },
+  {
+    id: 'cos-02', cat: 'cos', title: '和风物语', desc: '东方美学的细腻呈现，从樱花到花魁，诠释日式与国风的交融之美。',
+    items: [
+      { title: '樱花巫女', seed: 'cos02', w: 800, h: 1100, loc: '杭州·茶园' },
+      { title: '古风剑客', seed: 'cos04', w: 800, h: 1200, loc: '安吉·竹海' },
+      { title: '和风花魁', seed: 'cos08', w: 800, h: 1200, loc: '上海·实景棚' },
+      { title: '圣女颂歌', seed: 'cos11', w: 800, h: 1200, loc: '北京·教堂' }
+    ]
+  },
+  {
+    id: 'cos-03', cat: 'cos', title: '未来狂想', desc: '科幻与奇幻的碰撞，机甲、魔法与赛博朋克，探索想象力的边界。',
+    items: [
+      { title: '机甲少女', seed: 'cos03', w: 800, h: 1000, loc: '深圳·展馆' },
+      { title: '星之魔法师', seed: 'cos05', w: 800, h: 900, loc: '上海·影棚' },
+      { title: '赛博朋克', seed: 'cos07', w: 800, h: 1050, loc: '重庆·洪崖洞' },
+      { title: '蒸汽朋克', seed: 'cos09', w: 800, h: 950, loc: '广州·Workshop' }
+    ]
+  },
+
+  // === DAILY ===
+  {
+    id: 'daily-01', cat: 'daily', title: '城市漫游', desc: '穿梭在城市角落，捕捉那些被忽略的日常美感。一花一叶，皆是风景。',
+    items: [
+      { title: '街角花店', seed: 'daily03', w: 800, h: 900, loc: '上海·武康路' },
+      { title: '地铁站台', seed: 'daily07', w: 800, h: 600, loc: '上海·人民广场' },
+      { title: '雨后散步', seed: 'daily04', w: 800, h: 1100, loc: '杭州·西湖' },
+      { title: '夜跑记录', seed: 'daily11', w: 800, h: 1000, loc: '深圳·湾公园' }
+    ]
+  },
+  {
+    id: 'daily-02', cat: 'daily', title: '生活仪式', desc: '在快节奏的生活里，保留一份属于自己的仪式感。咖啡、阅读、手作。',
+    items: [
+      { title: '窗边午后', seed: 'daily01', w: 800, h: 600, loc: '上海·家中' },
+      { title: '咖啡时光', seed: 'daily02', w: 800, h: 1000, loc: '上海·咖啡馆' },
+      { title: '书店静默', seed: 'daily06', w: 800, h: 1050, loc: '南京·先锋书店' },
+      { title: '手作时光', seed: 'daily12', w: 800, h: 850, loc: '上海·工作室' }
+    ]
+  },
+  {
+    id: 'daily-03', cat: 'daily', title: '人间烟火', desc: '市集的热闹、公园的晨练、阳台上的家常饭,生活最本真的模样。',
+    items: [
+      { title: '市集烟火', seed: 'daily05', w: 800, h: 800, loc: '北京·鼓楼' },
+      { title: '阳台晚餐', seed: 'daily08', w: 800, h: 950, loc: '成都·家中' },
+      { title: '公园晨练', seed: 'daily10', w: 800, h: 700, loc: '北京·朝阳公园' },
+      { title: '旧物整理', seed: 'daily09', w: 800, h: 1100, loc: '上海·旧居' }
+    ]
+  },
+
+  // === WEDDING ===
+  {
+    id: 'wed-01', cat: 'wedding', title: '仪式之晨', desc: '婚礼当天的清晨，从晨光准备到First Look，记录最真挚的期待与感动。',
+    items: [
+      { title: '晨光准备', seed: 'wed02', w: 800, h: 1200, loc: '上海·酒店套房' },
+      { title: '父亲牵手', seed: 'wed04', w: 800, h: 950, loc: '北京·庄园' },
+      { title: 'First Look', seed: 'wed05', w: 800, h: 1050, loc: '苏州·园林' },
+      { title: '背后纽扣', seed: 'wed11', w: 800, h: 1200, loc: '上海·更衣室' }
+    ]
+  },
+  {
+    id: 'wed-02', cat: 'wedding', title: '浪漫瞬间', desc: '誓言、花瓣、初舞,那些让人热泪盈眶的浪漫时刻，被镜头定格成永恒。',
+    items: [
+      { title: '誓言时刻', seed: 'wed01', w: 800, h: 1100, loc: '三亚·海滨教堂' },
+      { title: '花瓣雨', seed: 'wed06', w: 800, h: 700, loc: '大理·草坪' },
+      { title: '舞池初舞', seed: 'wed10', w: 800, h: 1100, loc: '成都·酒店' },
+      { title: '烟花祝福', seed: 'wed12', w: 800, h: 900, loc: '三亚·海滩' }
+    ]
+  },
+  {
+    id: 'wed-03', cat: 'wedding', title: '细节之美', desc: '花束、戒指、灯火、剪影,那些容易被忽略的细节，恰恰是最动人的注脚。',
+    items: [
+      { title: '花束特写', seed: 'wed03', w: 800, h: 800, loc: '杭州·花园' },
+      { title: '戒指细节', seed: 'wed07', w: 800, h: 800, loc: '上海·仪式厅' },
+      { title: '黄昏剪影', seed: 'wed08', w: 800, h: 600, loc: '厦门·海滩' },
+      { title: '宴会灯火', seed: 'wed09', w: 800, h: 1000, loc: '上海·宴会厅' }
+    ]
+  },
+
+  // === LANDSCAPE ===
+  {
+    id: 'land-01', cat: 'landscape', title: '山河壮阔', desc: '从雪山到沙漠，从云海到冰湖，用镜头丈量祖国的大好河山。',
+    items: [
+      { title: '雪山日出', seed: 'land01', w: 800, h: 500, loc: '西藏·纳木错' },
+      { title: '沙漠驼影', seed: 'land07', w: 800, h: 700, loc: '甘肃·鸣沙山' },
+      { title: '云海翻涌', seed: 'land06', w: 800, h: 500, loc: '安徽·黄山' },
+      { title: '冰湖倒影', seed: 'land08', w: 800, h: 1000, loc: '四川·九寨沟' }
+    ]
+  },
+  {
+    id: 'land-02', cat: 'landscape', title: '光影诗篇', desc: '梯田的光影、晨雾的朦胧、日落的余晖,大自然是最好的光影师。',
+    items: [
+      { title: '梯田光影', seed: 'land02', w: 800, h: 600, loc: '云南·元阳' },
+      { title: '茶园晨雾', seed: 'land11', w: 800, h: 650, loc: '浙江·龙井' },
+      { title: '海岸礁石', seed: 'land05', w: 800, h: 600, loc: '福建·霞浦' },
+      { title: '城市天际线', seed: 'land09', w: 800, h: 550, loc: '上海·外滩' }
+    ]
+  },
+  {
+    id: 'land-03', cat: 'landscape', title: '星辰之外', desc: '星空、极光、秋日胡杨、夜樱隧道,超越日常的奇幻自然景观。',
+    items: [
+      { title: '星空银河', seed: 'land03', w: 800, h: 550, loc: '青海·茶卡盐湖' },
+      { title: '秋日胡杨', seed: 'land04', w: 800, h: 1100, loc: '内蒙古·额济纳' },
+      { title: '樱花隧道', seed: 'land10', w: 800, h: 1100, loc: '贵州·平坝' },
+      { title: '极光之夜', seed: 'land12', w: 800, h: 600, loc: '挪威·特罗姆瑟' }
+    ]
+  },
+
+  // === AIGC ===
+  {
+    id: 'aigc-01', cat: 'aigc', title: '梦境生成', desc: '以 AI 为画笔，将想象力渲染成可见的影像。每一帧都是算法与审美的对话。',
+    items: [
+      { title: '霓虹都市', seed: 'aigc01', w: 800, h: 1000, loc: 'AI 生成' },
+      { title: '星海漫游', seed: 'aigc02', w: 800, h: 1200, loc: 'AI 生成' },
+      { title: '机械之花', seed: 'aigc03', w: 800, h: 900, loc: 'AI 生成' },
+      { title: '云上之城', seed: 'aigc04', w: 800, h: 1100, loc: 'AI 生成' }
+    ]
+  },
+  {
+    id: 'aigc-02', cat: 'aigc', title: '风格实验', desc: '从赛博朋克到古典油画，探索 AI 在不同视觉语言下的表达边界。',
+    items: [
+      { title: '蒸汽纪元', seed: 'aigc05', w: 800, h: 1200, loc: 'AI 生成' },
+      { title: '浮世新绘', seed: 'aigc06', w: 800, h: 1000, loc: 'AI 生成' },
+      { title: '极简几何', seed: 'aigc07', w: 800, h: 600, loc: 'AI 生成' },
+      { title: '水墨再造', seed: 'aigc08', w: 800, h: 1100, loc: 'AI 生成' }
+    ]
+  },
+  {
+    id: 'aigc-03', cat: 'aigc', title: '概念影像', desc: '用 AI 生成工具创作的概念摄影，重新定义真实与想象的边界。',
+    items: [
+      { title: '时间裂隙', seed: 'aigc09', w: 800, h: 900, loc: 'AI 生成' },
+      { title: '光之教堂', seed: 'aigc10', w: 800, h: 1200, loc: 'AI 生成' },
+      { title: '未来遗迹', seed: 'aigc11', w: 800, h: 700, loc: 'AI 生成' },
+      { title: '镜中世界', seed: 'aigc12', w: 800, h: 1000, loc: 'AI 生成' }
+    ]
+  }
+];
+
+// ============================================
+// RENDER GALLERY - 作品集
+// ============================================
+let currentFilter = 'all';
+let visibleCount = 8;
+const BATCH = 8;
+
+function getFiltered() {
+  return currentFilter === 'all' ? collections : collections.filter(c => c.cat === currentFilter);
+}
+
+function renderGallery() {
+  const masonry = document.getElementById('masonry');
+  const filtered = getFiltered();
+  const toShow = filtered.slice(0, visibleCount);
+
+  masonry.innerHTML = toShow.map((c, i) => {
+    const cat = categories[c.cat];
+    const cover = c.items[0];
+    const imgUrl = `https://picsum.photos/seed/${cover.seed}/${cover.w}/${cover.h}`;
+    return `
+      <div class="photo-card visible" data-index="${i}" data-cat="${c.cat}" data-collection="${c.id}">
+        <img src="${imgUrl}" alt="${c.title}" loading="lazy">
+        <div class="photo-overlay">
+          <div class="cat-badge"><span class="dot" style="background:${cat.color}"></span>${cat.name}</div>
+          <div class="title">${c.title}</div>
+          <div class="meta">${c.items.length} 张照片</div>
+        </div>
+      </div>`;
+  }).join('');
+
+  const loadMoreWrap = document.getElementById('loadMoreWrap');
+  if (toShow.length >= filtered.length) {
+    loadMoreWrap.style.display = 'none';
+  } else {
+    loadMoreWrap.style.display = 'block';
+  }
+
+  document.querySelectorAll('.photo-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const idx = parseInt(card.dataset.index);
+      openCollection(idx);
+    });
+  });
+}
+
+function updateCounts() {
+  document.getElementById('countAll').textContent = collections.length;
+  document.getElementById('countCos').textContent = collections.filter(c => c.cat === 'cos').length;
+  document.getElementById('countDaily').textContent = collections.filter(c => c.cat === 'daily').length;
+  document.getElementById('countWedding').textContent = collections.filter(c => c.cat === 'wedding').length;
+  document.getElementById('countLandscape').textContent = collections.filter(c => c.cat === 'landscape').length;
+  document.getElementById('countAigc').textContent = collections.filter(c => c.cat === 'aigc').length;
+}
+
+// ============================================
+// FILTER
+// ============================================
+function setFilter(cat) {
+  currentFilter = cat;
+  visibleCount = BATCH;
+
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.classList.toggle('active', a.dataset.cat === cat);
+  });
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.cat === cat);
+  });
+
+  renderGallery();
+}
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => setFilter(btn.dataset.cat));
+});
+document.querySelectorAll('.nav-links a[data-cat]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    e.preventDefault();
+    setFilter(a.dataset.cat);
+    document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('navToggle').classList.remove('active');
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+
+// Load more
+document.getElementById('btnLoadMore').addEventListener('click', () => {
+  visibleCount += BATCH;
+  renderGallery();
+  showToast(`已加载全部 ${Math.min(visibleCount, getFiltered().length)} 个作品集`);
+});
+
+// ============================================
+// COLLECTION DETAIL - 作品集详情
+// ============================================
+let currentCollection = null;
+
+function openCollection(idx) {
+  const filtered = getFiltered();
+  currentCollection = filtered[idx];
+  if (!currentCollection) return;
+  renderCollectionDetail();
+  document.getElementById('collectionOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCollection() {
+  document.getElementById('collectionOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+  currentCollection = null;
+}
+
+function renderCollectionDetail() {
+  const c = currentCollection;
+  if (!c) return;
+  const cat = categories[c.cat];
+
+  // 生成图片网格
+  const gridHTML = c.items.map((item, i) => {
+    const imgUrl = `https://picsum.photos/seed/${item.seed}/${item.w}/${item.h}`;
+    return `
+      <div class="cd-item" style="--cd-delay:${i * 0.05}s">
+        <div class="cd-img-wrap">
+          <img src="${imgUrl}" alt="${item.title}" loading="lazy">
+        </div>
+        <div class="cd-caption">
+          <span class="cd-title">${item.title}</span>
+          <span class="cd-loc">${item.loc}</span>
+        </div>
+      </div>`;
+  }).join('');
+
+  document.getElementById('cdContent').innerHTML = `
+    <div class="cd-header">
+      <div class="cd-header-left">
+        <div class="cd-cat" style="color:${cat.color}">
+          <span class="dot" style="background:${cat.color}"></span>${cat.name} · ${cat.en}
+        </div>
+        <h2 class="cd-title">${c.title}</h2>
+        <p class="cd-desc">${c.desc}</p>
+      </div>
+      <button class="cd-close" onclick="closeCollection()" aria-label="关闭">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="cd-grid">
+      ${gridHTML}
+    </div>`;
+}
+
+document.getElementById('collectionOverlay').addEventListener('click', (e) => {
+  if (e.target.id === 'collectionOverlay') closeCollection();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeCollection();
+});
+
+function scrollToGallery(e) {
+  if (e) e.preventDefault();
+  document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
+}
+
+function scrollToAbout(e) {
+  if (e) e.preventDefault();
+  document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+}
+
+// ============================================
+// MUSIC PLAYER
+// ============================================
+const playlist = [
+  { name: 'Midnight Reverie', artist: 'SoundHelix', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', cover: null },
+  { name: 'Golden Hour', artist: 'SoundHelix', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3', cover: null },
+  { name: 'Silent Bloom', artist: 'SoundHelix', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3', cover: null },
+  { name: 'Urban Echoes', artist: 'SoundHelix', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3', cover: null },
+  { name: 'Dreamwalker', artist: 'SoundHelix', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3', cover: null },
+  { name: 'Crimson Dusk', artist: 'SoundHelix', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3', cover: null },
+  { name: 'Velvet Storm', artist: 'SoundHelix', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3', cover: null },
+  { name: 'Lunar Tide', artist: 'SoundHelix', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3', cover: null }
+];
+
+const audio = document.getElementById('audio');
+const player = document.getElementById('player');
+let currentTrack = 0;
+let isPlaying = false;
+let isShuffle = false;
+let repeatMode = 0;
+let volume = 0.7;
+
+function loadTrack(idx) {
+  currentTrack = idx;
+  const track = playlist[idx];
+  audio.src = track.url;
+  audio.volume = volume;
+  document.getElementById('trackName').textContent = track.name;
+  document.getElementById('trackArtist').textContent = track.artist;
+  document.getElementById('playerCover').innerHTML = `<div class="cover-placeholder">♪</div>`;
+  updatePlaylistUI();
+}
+
+function play() {
+  if (!audio.src) loadTrack(0);
+  audio.play().then(() => {
+    isPlaying = true;
+    player.classList.add('playing');
+    document.getElementById('iconPlay').style.display = 'none';
+    document.getElementById('iconPause').style.display = 'block';
+  }).catch(() => {
+    showToast('音频加载中，请稍候…');
+  });
+}
+
+function pause() {
+  audio.pause();
+  isPlaying = false;
+  player.classList.remove('playing');
+  document.getElementById('iconPlay').style.display = 'block';
+  document.getElementById('iconPause').style.display = 'none';
+}
+
+function togglePlay() {
+  if (isPlaying) pause(); else play();
+}
+
+function nextTrack() {
+  if (isShuffle) {
+    let n;
+    do { n = Math.floor(Math.random() * playlist.length); } while (n === currentTrack && playlist.length > 1);
+    loadTrack(n);
+  } else {
+    loadTrack((currentTrack + 1) % playlist.length);
+  }
+  if (isPlaying) play();
+}
+
+function prevTrack() {
+  loadTrack((currentTrack - 1 + playlist.length) % playlist.length);
+  if (isPlaying) play();
+}
+
+function updatePlaylistUI() {
+  document.getElementById('playlistCount').textContent = `${playlist.length} tracks`;
+  document.getElementById('playlistList').innerHTML = playlist.map((t, i) => `
+    <div class="playlist-item ${i === currentTrack ? 'active' : ''}" data-idx="${i}">
+      <span class="num">${String(i + 1).padStart(2, '0')}</span>
+      <div class="info">
+        <div class="name">${t.name}</div>
+        <div class="artist">${t.artist}</div>
+      </div>
+      <span class="duration">--:--</span>
+    </div>`).join('');
+
+  document.querySelectorAll('.playlist-item').forEach(item => {
+    item.addEventListener('click', () => {
+      loadTrack(parseInt(item.dataset.idx));
+      play();
+    });
+  });
+}
+
+function fmtTime(s) {
+  if (!s || isNaN(s)) return '0:00';
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60);
+  return `${m}:${String(sec).padStart(2, '0')}`;
+}
+
+audio.addEventListener('loadedmetadata', () => {
+  document.getElementById('timeDuration').textContent = fmtTime(audio.duration);
+});
+
+audio.addEventListener('timeupdate', () => {
+  if (audio.duration) {
+    const pct = (audio.currentTime / audio.duration) * 100;
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('timeCurrent').textContent = fmtTime(audio.currentTime);
+  }
+});
+
+audio.addEventListener('ended', () => {
+  if (repeatMode === 2) {
+    audio.currentTime = 0;
+    play();
+  } else if (repeatMode === 1 || currentTrack < playlist.length - 1) {
+    nextTrack();
+  } else {
+    pause();
+  }
+});
+
+document.getElementById('btnPlay').addEventListener('click', togglePlay);
+document.getElementById('btnNext').addEventListener('click', nextTrack);
+document.getElementById('btnPrev').addEventListener('click', prevTrack);
+
+document.getElementById('btnShuffle').addEventListener('click', (e) => {
+  isShuffle = !isShuffle;
+  e.currentTarget.classList.toggle('active', isShuffle);
+  showToast(isShuffle ? '随机播放已开启' : '随机播放已关闭');
+});
+
+document.getElementById('btnRepeat').addEventListener('click', (e) => {
+  repeatMode = (repeatMode + 1) % 3;
+  e.currentTarget.classList.toggle('active', repeatMode > 0);
+  const labels = ['循环已关闭', '列表循环', '单曲循环'];
+  showToast(labels[repeatMode]);
+});
+
+document.getElementById('progressBar').addEventListener('click', (e) => {
+  const rect = e.currentTarget.getBoundingClientRect();
+  const pct = (e.clientX - rect.left) / rect.width;
+  if (audio.duration) audio.currentTime = pct * audio.duration;
+});
+
+document.getElementById('volumeSlider').addEventListener('click', (e) => {
+  const rect = e.currentTarget.getBoundingClientRect();
+  const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+  volume = pct;
+  audio.volume = volume;
+  document.getElementById('volumeFill').style.width = (pct * 100) + '%';
+});
+
+document.getElementById('btnPlaylist').addEventListener('click', (e) => {
+  const panel = document.getElementById('playlistPanel');
+  panel.classList.toggle('open');
+  e.currentTarget.classList.toggle('active', panel.classList.contains('open'));
+});
+
+document.getElementById('playerToggle').addEventListener('click', () => {
+  player.classList.toggle('collapsed');
+});
+
+function togglePlayer() {
+  player.classList.toggle('collapsed');
+}
+
+loadTrack(0);
+document.getElementById('volumeFill').style.width = (volume * 100) + '%';
+
+// ============================================
+// INIT
+// ============================================
+updateCounts();
+renderGallery();
+
+let firstInteraction = false;
+document.addEventListener('click', () => {
+  if (!firstInteraction) {
+    firstInteraction = true;
+    showToast('点击播放按钮开启音乐 ♪');
+  }
+}, { once: true });
+
+// Equipment lightbox
+const eqLightbox = document.createElement('div');
+eqLightbox.className = 'eq-lightbox';
+eqLightbox.innerHTML = `
+  <div class="eq-lightbox-inner">
+    <button class="eq-lightbox-close">✕</button>
+    <img src="" alt="">
+    <div class="eq-lightbox-info">
+      <div class="name"></div>
+      <div class="spec"></div>
+    </div>
+  </div>`;
+document.body.appendChild(eqLightbox);
+
+const eqLightboxImg = eqLightbox.querySelector('img');
+const eqLightboxName = eqLightbox.querySelector('.eq-lightbox-info .name');
+const eqLightboxSpec = eqLightbox.querySelector('.eq-lightbox-info .spec');
+
+eqLightbox.addEventListener('click', (e) => {
+  if (e.target === eqLightbox || e.target.closest('.eq-lightbox-close')) {
+    eqLightbox.classList.remove('active');
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && eqLightbox.classList.contains('active')) {
+    eqLightbox.classList.remove('active');
+  }
+});
+
+document.querySelector('.equipment-scroll').addEventListener('click', (e) => {
+  const card = e.target.closest('.eq-product');
+  if (!card) return;
+  const img = card.querySelector('img');
+  const name = card.querySelector('.eq-product-name');
+  const spec = card.querySelector('.eq-product-spec');
+  if (img) eqLightboxImg.src = img.src;
+  if (name) eqLightboxName.textContent = name.textContent;
+  if (spec) eqLightboxSpec.textContent = spec.textContent;
+  eqLightbox.classList.add('active');
+});
+
+// ============================================
+// ABOUT PORTRAIT - 多图浏览
+// ============================================
+// 关于我的自我介绍图。第 1 张保留本人照片，后续可替换为真实照片。
+const PORTRAIT_IMAGES = [
+  { src: 'assets/portrait-fengyue.jpg', alt: '风月' },
+  { src: 'assets/portrait-placeholder-2.svg', alt: '占位图 2' },
+  { src: 'assets/portrait-placeholder-3.svg', alt: '占位图 3' },
+  { src: 'assets/portrait-placeholder-4.svg', alt: '占位图 4' }
+];
+
+(function initPortraitViewer() {
+  const slidesEl = document.getElementById('portraitSlides');
+  const thumbsEl = document.getElementById('portraitThumbs');
+  const prevBtn = document.getElementById('portraitPrev');
+  const nextBtn = document.getElementById('portraitNext');
+  const counterEl = document.getElementById('portraitCounter');
+  const stageEl = document.getElementById('portraitStage');
+  if (!slidesEl || !thumbsEl) return;
+
+  let current = 0;
+  const total = PORTRAIT_IMAGES.length;
+
+  slidesEl.innerHTML = PORTRAIT_IMAGES.map((p) =>
+    `<div class="portrait-slide"><img src="${p.src}" alt="${p.alt}" loading="lazy" draggable="false"></div>`
+  ).join('');
+
+  thumbsEl.innerHTML = PORTRAIT_IMAGES.map((p, i) =>
+    `<button class="portrait-thumb${i === 0 ? ' active' : ''}" data-index="${i}" aria-label="${p.alt}">
+      <img src="${p.src}" alt="" loading="lazy" draggable="false">
+    </button>`
+  ).join('');
+
+  const thumbs = thumbsEl.querySelectorAll('.portrait-thumb');
+
+  function goTo(i) {
+    current = (i + total) % total;
+    slidesEl.style.transform = `translateX(-${current * 100}%)`;
+    counterEl.textContent = `${current + 1} / ${total}`;
+    thumbs.forEach((t, idx) => t.classList.toggle('active', idx === current));
+  }
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  thumbsEl.addEventListener('click', (e) => {
+    const btn = e.target.closest('.portrait-thumb');
+    if (btn) goTo(parseInt(btn.dataset.index, 10));
+  });
+
+  // 触摸滑动切换
+  let startX = 0;
+  let startY = 0;
+  let dragging = false;
+  stageEl.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    dragging = true;
+  }, { passive: true });
+  stageEl.addEventListener('touchend', (e) => {
+    if (!dragging) return;
+    dragging = false;
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      goTo(dx < 0 ? current + 1 : current - 1);
+    }
+  }, { passive: true });
+
+  // 键盘左右切换（焦点在浏览组件内时）
+  stageEl.setAttribute('tabindex', '0');
+  stageEl.style.outline = 'none';
+  stageEl.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
+  });
+})();
+</script>
+</body>
+</html>

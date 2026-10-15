@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16161b"/>
+      <stop offset="1" stop-color="#1d1d23"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <rect width="600" height="800" fill="url(#glow)"/>
+  <g stroke="#3a3a40" stroke-width="2.5" fill="none" opacity="0.9">
+    <rect x="225" y="300" width="150" height="112" rx="22"/>
+    <rect x="258" y="328" width="84" height="60" rx="14"/>
+    <circle cx="300" cy="356" r="20"/>
+    <path d="M255 322c4-8 12-12 20-12" stroke-linecap="round"/>
+  </g>
+  <text x="300" y="470" text-anchor="middle" fill="#8a8a92" font-family="-apple-system, 'PingFang SC', sans-serif" font-size="26" font-weight="500">待替换</text>
+  <text x="300" y="510" text-anchor="middle" fill="#4a4a50" font-family="-apple-system, 'PingFang SC', sans-serif" font-size="16" letter-spacing="2">03</text>
+</svg>
