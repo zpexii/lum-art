@@ -20,6 +20,25 @@
   'use strict';
 
   var ROOT = (document.currentScript && document.currentScript.dataset.root) || '';
+  var motionStyles = document.createElement('link');
+  motionStyles.rel = 'stylesheet';
+  motionStyles.href = ROOT + 'assets/keynote.css';
+  document.head.appendChild(motionStyles);
+  var motionScript = document.createElement('script');
+  motionScript.src = ROOT + 'assets/js/keynote.js';
+  motionScript.defer = true;
+  document.head.appendChild(motionScript);
+  
+  // Three.js 环境光场系统注入
+  var threeJS = document.createElement('script');
+  threeJS.src = 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js';
+  threeJS.onload = function() {
+    var ambientScript = document.createElement('script');
+    ambientScript.src = ROOT + 'assets/js/ambient.js';
+    ambientScript.defer = true;
+    document.head.appendChild(ambientScript);
+  };
+  document.head.appendChild(threeJS);
 
   // 指回首页时的前缀。
   // 首页里必须是空串，链接才是裸锚点 #gallery（原地平滑滚动，不重新加载）；
@@ -85,22 +104,29 @@
   }
 
   function footerHTML() {
+    // 优先读 site.js 的 footer 数据，没有就用默认值
+    var F = (window.LUMIERE_SITE && window.LUMIERE_SITE.footer) || {};
+    var sig = F.signatureSvg || '<svg viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 38c22-26 44-30 52-14 7 14-3 28-20 22-16-6-12-30 6-40 12-7 30 0 34 20 3 14-8 18-12 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    var sigCap = F.signatureCaption || 'Signed · 风月 · LUMIÈRE';
+    var brand = F.brand || 'LUMIÈRE';
+    var tag = F.tagline || '';
+
     return [
       '  <div class="signature">',
-      '    <svg class="signature-svg" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">',
-      '      <path d="M12 38c22-26 44-30 52-14 7 14-3 28-20 22-16-6-12-30 6-40 12-7 30 0 34 20 3 14-8 18-12 12M86 36c6-16 16-20 22-10 5 9 0 20-12 18 18-2 26 6 22 16M132 32c0-14 12-22 20-16 8 6 2 24-14 24M178 28c-8-6-14 2-10 8 4 6 16 4 16-8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>',
+      '    <svg class="signature-svg" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+      '      ' + sig +
       '    </svg>',
-      '    <div class="signature-caption">Signed · 风月 · LUMIÈRE</div>',
+      '    <div class="signature-caption">' + sigCap + '</div>',
       '  </div>',
-      '  <div class="brand">LUMIÈRE</div>',
-      '  <p class="tagline">光影之间，记录每一个值得珍藏的瞬间</p>',
+      '  <div class="brand">' + brand + '</div>',
+      (tag ? '  <p class="tagline">' + tag + '</p>' : ''),
       '  <div class="links">',
       '    <a href="' + HOME + '#gallery">作品</a>',
       '    <a href="' + HOME + '#about">关于</a>',
-      '    <a href="javascript:void(0)" onclick="showToast(\'感谢关注，联系邮箱将在后续提供\')">联系</a>',
+      '    <a href="javascript:void(0)" onclick="showToast(\'欢迎联系约拍与交流\')">联系</a>',
       '    <a href="javascript:void(0)" onclick="togglePlayer()">音乐</a>',
       '  </div>',
-      '  <div class="copyright">© 2026 LUMIÈRE · 光影集 · ALL RIGHTS RESERVED</div>'
+      '  <div class="copyright">© ' + (new Date().getFullYear()) + ' ' + brand + ' · 光影集 · ALL RIGHTS RESERVED</div>'
     ].join('\n');
   }
 

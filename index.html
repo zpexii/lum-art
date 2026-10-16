@@ -600,22 +600,22 @@
 <div class="toast" id="toast">点击播放按钮开启音乐 ♪</div>
 
 <script src="assets/js/columns.js"></script>
+<script src="assets/data/galleries.js"></script>
+<script src="assets/data/site.js"></script>
 <script src="assets/js/config.js" data-root=""></script>
 <script src="assets/js/shell.js"></script>
+<script src="assets/js/site-render.js"></script>
 <script>
 // ============================================
 // PHOTO DATA
 // ============================================
-const categories = {
-  cos: { name: 'Cos', label: 'Cosplay', color: '#ff375f', en: 'Cosplay' },
-  daily: { name: '日常', label: 'Daily Life', color: '#ff9f0a', en: 'Daily Life' },
-  wedding: { name: '婚礼', label: 'Wedding', color: '#ffb6c1', en: 'Wedding' },
-  landscape: { name: '风景', label: 'Landscape', color: '#30d158', en: 'Landscape' },
-  aigc: { name: 'AIGC', label: 'AI Generative', color: '#64d2ff', en: 'AI Generative' }
-};
+// 数据从 galleries.js 读，别在这里改了
+const categories = window.LUMIERE_GALLERIES.categories;
+const collections = window.LUMIERE_GALLERIES.collections;
 
-const collections = [
-  // === COS ===
+/* 旧 collections 硬编码数据已迁移至 assets/data/galleries.js
+   以下整块为历史备份，不再执行 — */
+/*
   {
     id: 'cos-01', cat: 'cos', title: '暗夜幻影', desc: '暗黑系角色还原，用光影塑造戏剧张力。从森林到废墟，每一帧都充满故事感。',
     items: [
@@ -759,7 +759,7 @@ const collections = [
       { title: '镜中世界', seed: 'aigc12', w: 800, h: 1000, loc: 'AI 生成' }
     ]
   }
-];
+]; */
 
 // ============================================
 // RENDER GALLERY - 作品集
@@ -779,11 +779,12 @@ function renderGallery() {
 
   masonry.innerHTML = toShow.map((c, i) => {
     const cat = categories[c.cat];
-    const cover = c.items[0];
-    const imgUrl = `https://picsum.photos/seed/${cover.seed}/${cover.w}/${cover.h}`;
+    // 优先用 collection.thumb，其次 items[0].src，最后兜底 picsum
+    const coverSrc = c.thumb || (c.items && c.items[0] && c.items[0].src) ||
+      `https://picsum.photos/seed/${c.id}/800/1000`;
     return `
       <div class="photo-card visible" data-index="${i}" data-cat="${c.cat}" data-collection="${c.id}">
-        <img src="${imgUrl}" alt="${c.title}" loading="lazy">
+        <img src="${coverSrc}" alt="${c.title}" loading="lazy">
         <div class="photo-overlay">
           <div class="cat-badge"><span class="dot" style="background:${cat.color}"></span>${cat.name}</div>
           <div class="title">${c.title}</div>
@@ -878,9 +879,10 @@ function renderCollectionDetail() {
   if (!c) return;
   const cat = categories[c.cat];
 
-  // 生成图片网格
+  // 生成图片网格（优先用 item.src，兜底 picsum）
   const gridHTML = c.items.map((item, i) => {
-    const imgUrl = `https://picsum.photos/seed/${item.seed}/${item.w}/${item.h}`;
+    const imgUrl = item.src ||
+      `https://picsum.photos/seed/${item.seed || c.id + i}/800/1000`;
     return `
       <div class="cd-item" style="--cd-delay:${i * 0.05}s">
         <div class="cd-img-wrap">
@@ -932,7 +934,11 @@ function scrollToAbout(e) {
 // ============================================
 // MUSIC PLAYER
 // ============================================
-const playlist = [
+// 旧 playlist 硬编码已迁移至 site.js，下面改为引用
+const playlist = window.LUMIERE_SITE.playlist;
+/* 旧 playlist 数据 — */
+/*
+const _old_playlist_placeholder = [
   { name: 'Midnight Reverie', artist: 'SoundHelix', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', cover: null },
   { name: 'Golden Hour', artist: 'SoundHelix', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3', cover: null },
   { name: 'Silent Bloom', artist: 'SoundHelix', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3', cover: null },
@@ -941,7 +947,7 @@ const playlist = [
   { name: 'Crimson Dusk', artist: 'SoundHelix', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3', cover: null },
   { name: 'Velvet Storm', artist: 'SoundHelix', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3', cover: null },
   { name: 'Lunar Tide', artist: 'SoundHelix', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3', cover: null }
-];
+]; */
 
 const audio = document.getElementById('audio');
 const player = document.getElementById('player');
@@ -1160,12 +1166,16 @@ document.querySelector('.equipment-scroll').addEventListener('click', (e) => {
 // ABOUT PORTRAIT - 多图浏览
 // ============================================
 // 关于我的自我介绍图。第 1 张保留本人照片，后续可替换为真实照片。
-const PORTRAIT_IMAGES = [
+// 旧 PORTRAIT_IMAGES 硬编码已迁移至 galleries.js.portraits
+const PORTRAIT_IMAGES = window.LUMIERE_GALLERIES.portraits;
+/* 旧数据 — */
+/*
+const _old_portrait = [
   { src: 'assets/portrait-fengyue.jpg', alt: '风月' },
   { src: 'assets/portrait-placeholder-2.svg', alt: '占位图 2' },
   { src: 'assets/portrait-placeholder-3.svg', alt: '占位图 3' },
   { src: 'assets/portrait-placeholder-4.svg', alt: '占位图 4' }
-];
+]; */
 
 (function initPortraitViewer() {
   const slidesEl = document.getElementById('portraitSlides');
